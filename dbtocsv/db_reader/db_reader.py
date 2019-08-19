@@ -2,15 +2,16 @@ import MySQLdb
 
 
 class Database:
-    def __init__(self, host, username, password, db):
+    def __init__(self, host, username, password, db_name):
         self.host = host
         self.username = username
         self.password = password
-        self.db = db
+        self.db_name = db_name
         self.cursor = None
 
     def make_conection(self):
-        db = MySQLdb.connect(self.host, self.username, self.password, self.db)
+        db = MySQLdb.connect(self.host, self.username,
+                             self.password, self.db_name)
         self.cursor = db.cursor()
 
     def fetch_tables(self):
@@ -23,7 +24,7 @@ class Database:
         sql_query = "SELECT COLUMN_NAME \
                         FROM INFORMATION_SCHEMA.COLUMNS \
                         WHERE TABLE_SCHEMA='{}' \
-                            AND TABLE_NAME='{}'".format(self.db, table)
+                            AND TABLE_NAME='{}'".format(self.db_name, table)
         columns = self.query(sql_query)
         columns = list(map(lambda x: x[0], columns))
         return columns
