@@ -2,7 +2,9 @@
 write data from database into csv file
 
 ### Install
-`$ pip install dbtocsv`
+```bash
+$ pip install dbtocsv
+```
 
 ### Usage
 ```python
