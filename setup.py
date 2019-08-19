@@ -17,6 +17,7 @@ setup(
      description="Python Script to put data from MySQL database into csv files",
      url="https://github.com/nayakrahul/DBtoCSV",
      keywords='mysql database csv',
+     include_package_data=True,
      author='Rahul Nayak',
      install_requires=install_requires,
      dependency_links=dependency_links,
