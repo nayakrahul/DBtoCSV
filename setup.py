@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 from os import path
 
 current_path = path.abspath(path.dirname(__file__))
@@ -13,10 +13,11 @@ dependency_links = [x.strip().replace('git+', '')
 
 setup(
      name='dbtocsv',
-     version='0.1',
+     version='0.0.1',
      description="Python Script to put data from MySQL database into csv files",
      url="https://github.com/nayakrahul/DBtoCSV",
      keywords='mysql database csv',
+     packages=find_packages(),
      include_package_data=True,
      author='Rahul Nayak',
      install_requires=install_requires,
