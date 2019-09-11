@@ -17,7 +17,7 @@ dependency_links = [x.strip().replace('git+', '')
 
 setup(
      name='dbtocsv',
-     version='0.1.4',
+     version='0.1.5',
      description="Python Script to put data from MySQL database into csv files",
      long_description=long_description,
      long_description_content_type="text/markdown",
