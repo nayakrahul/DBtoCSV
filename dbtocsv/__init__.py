@@ -1,1 +1,1 @@
-from .db_to_csv import DBtoCSV
+from .db_to_csv import Dbtocsv

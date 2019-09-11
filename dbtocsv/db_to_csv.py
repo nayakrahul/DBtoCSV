@@ -6,7 +6,7 @@ from .csv_writer import CSV
 spinner = Halo(spinner='arrow3')
 
 
-class DBtoCSV:
+class Dbtocsv:
     def __init__(self, host, username, password, db_name):
         """
         Parameters
