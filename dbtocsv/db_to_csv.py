@@ -53,14 +53,18 @@ class Dbtocsv:
             spinner.start()
             try:
                 columns = self.db.fetch_columns(table)
-                rows = self.db.fetch_all_rows(table)
+                rows = self.db.fetch_all_rows(table, spinner)
             except:
-                raise Exception("Error while fetching data from tables.")
-                spinner.fail("Writing to table {} failed".format(table))
+                raise Exception(
+                    "Error while fetching data from tables.")
+                spinner.fail(
+                    "Writing to table {} failed".format(table))
             try:
                 csv = CSV(file='{}.csv'.format(table))
                 csv.write(rows, columns)
                 spinner.succeed("Wrote table {}".format(table))
             except:
-                raise Exception("Error while writing data to csv file.")
-                spinner.fail("Writing to table {} failed".format(table))
+                raise Exception(
+                    "Error while writing data to csv file.")
+                spinner.fail(
+                    "Writing to table {} failed".format(table))
