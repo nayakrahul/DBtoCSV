@@ -2,16 +2,14 @@ import MySQLdb
 
 
 class Database:
-    def __init__(self, host, username, password, db_name):
+    def __init__(self, host, db_name):
         self.host = host
-        self.username = username
-        self.password = password
         self.db_name = db_name
         self.cursor = None
 
-    def make_conection(self):
-        db = MySQLdb.connect(self.host, self.username,
-                             self.password, self.db_name)
+    def make_connection(self, username, password):
+        db = MySQLdb.connect(self.host, username,
+                             password, self.db_name)
         self.cursor = db.cursor()
 
     def fetch_tables(self):

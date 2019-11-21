@@ -20,13 +20,9 @@ class Dbtocsv:
         db_name : str, required
             name of the database.
         """
-        self.host = host
-        self.username = username
-        self.password = password
-        self.db_name = db_name
-        self.db = Database(host, username, password, db_name)
+        self.db = Database(host, db_name)
         try:
-            self.db.make_conection()
+            self.db.make_connection(username, password)
         except:
             raise Exception("Error while making database connection.")
 
