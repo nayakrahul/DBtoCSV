@@ -55,7 +55,7 @@ class Dbtocsv:
                     "Error while fetching data from tables.")
                 spinner.fail(
                     "Writing to table {} failed".format(table))
-                return 0
+                continue
             try:
                 csv = CSV(file='{}.csv'.format(table))
                 csv.write(rows, columns)
