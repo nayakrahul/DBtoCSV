@@ -25,7 +25,7 @@ class Dbtocsv:
             self.db.make_connection(username, getpass.getpass(prompt="password : "))
         except:
             raise Exception("Error while making database connection.")
-            
+
     def write_to_csv(self, only_tables=[], exclude_tables=[]):
         """
         Parameters
