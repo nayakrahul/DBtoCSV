@@ -9,6 +9,7 @@ $ pip install dbtocsv
 ### Usage
 ```python
 from dbtocsv import Dbtocsv
-dbtocsv = Dbtocsv(host='', username='', password='', db_name='')
+dbtocsv = Dbtocsv(host='', db_name='')
+dbtocsv.authenticate()
 dbtocsv.write_to_csv()
 ```
