@@ -8,16 +8,12 @@ spinner = Halo(spinner='arrow3')
 
 
 class Dbtocsv:
-    def __init__(self, host, username, password, db_name):
+    def __init__(self, host, db_name):
         """
         Parameters
         ----------
         host : str, required
             database hostname.
-        username : str, required
-            username to access database.
-        password : str, required
-            password to access database.
         db_name : str, required
             name of the database.
         """
