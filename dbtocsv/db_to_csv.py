@@ -1,4 +1,5 @@
 from halo import Halo
+import getpass
 
 from .db_reader import Database
 from .csv_writer import CSV
@@ -21,11 +22,14 @@ class Dbtocsv:
             name of the database.
         """
         self.db = Database(host, db_name)
+
+    def authenticate():
+        username = raw_input("username : ")
         try:
-            self.db.make_connection(username, password)
+            self.db.make_connection(username, getpass.getpass(prompt="password : "))
         except:
             raise Exception("Error while making database connection.")
-
+            
     def write_to_csv(self, only_tables=[], exclude_tables=[]):
         """
         Parameters
