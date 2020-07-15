@@ -19,7 +19,7 @@ class Dbtocsv:
         """
         self.db = Database(host, db_name)
 
-    def authenticate():
+    def authenticate(self):
         username = raw_input("username : ")
         try:
             self.db.make_connection(username, getpass.getpass(prompt="password : "))
